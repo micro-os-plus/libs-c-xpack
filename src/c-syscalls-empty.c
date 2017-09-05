@@ -71,6 +71,13 @@ int __attribute__((weak))
 _fstat (int fildes __attribute__((unused)),
         struct stat* st __attribute__((unused)))
 {
+  if (_isatty (fildes))
+    {
+      // The file is a character special file (a device like a terminal)
+      st->st_mode = S_IFCHR;
+      return 0;
+    }
+
   errno = ENOSYS;
   return -1;
 }
@@ -93,7 +100,11 @@ _gettimeofday (struct timeval* ptimeval __attribute__((unused)),
 int __attribute__((weak))
 _isatty (int fildes __attribute__((unused)))
 {
-  errno = ENOSYS;
+  if (fildes == STDOUT_FILENO || fildes == STDERR_FILENO)
+    {
+      return 1;
+    }
+
   return 0;
 }
 
@@ -116,6 +127,11 @@ off_t __attribute__((weak))
 _lseek (int fildes __attribute__((unused)), int ptr __attribute__((unused)),
         int dir __attribute__((unused)))
 {
+  if (_isatty (fildes))
+    {
+      return 0;
+    }
+
   errno = ENOSYS;
   return -1;
 }
