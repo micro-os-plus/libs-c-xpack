@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/micro-os-plus/c-libs.git"
   },
+  "homepage": "https://github.com/micro-os-plus/c-libs",
   "keywords": [
+    "xpack",
     "c++",
     "micro-os-plus",
     "library"
@@ -26,6 +28,7 @@
   },
   "config": {},
   "dependencies": {},
-  "xpack": {},
-  "homepage": "https://github.com/micro-os-plus/c-libs"
+  "xpack": {
+    "dependencies": {}
+  }
 }
