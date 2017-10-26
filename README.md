@@ -15,10 +15,10 @@ This section is intended to developers who plan to include this library in their
 
 ### Easy install
 
-The source files are available from [GitHub](https://github.com/micro-os-plus/c-libs):
+The source files are available from [GitHub](https://github.com/micro-os-plus/c-libs-xpack):
 
 ```bash
-$ git clone https://github.com/micro-os-plus/c-libs.git c-libs.git
+$ git clone https://github.com/micro-os-plus/c-libs-xpack.git c-libs-xpack.git
 ```
 
 The library will shortly be available from the npm registry:
