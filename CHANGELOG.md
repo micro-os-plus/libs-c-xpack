@@ -2,7 +2,7 @@
 
 Changes in reverse chronological order.
 
-### v1.0.4 (2018-01-09)
+### v1.0.4 (2018-01-23)
 
 * [#1] c-syscalls-empty.c: fix conditional macro
 * [#2] _getpid() always return 1
