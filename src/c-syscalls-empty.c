@@ -33,7 +33,7 @@
 
 // Semihosting has its own set of implementations.
 
-#if !defined(OS_USE_SEMIHOSTING)
+#if !defined(OS_USE_SEMIHOSTING_SYSCALLS)
 
 int __attribute__((weak))
 _chown (const char* path __attribute__((unused)),
@@ -216,6 +216,8 @@ _write (int fildes __attribute__((unused)),
   return -1;
 }
 
-#endif /* !defined(OS_USE_SEMIHOSTING) */
+// ----------------------------------------------------------------------------
+
+#endif /* !defined(OS_USE_SEMIHOSTING_SYSCALLS) */
 
 // ----------------------------------------------------------------------------
