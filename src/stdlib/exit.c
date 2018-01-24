@@ -26,6 +26,7 @@
  */
 
 #include <micro-os-plus/startup/initialize-hooks.h>
+#include <micro-os-plus/architecture.h>
 #include <micro-os-plus/diag/trace.h>
 
 #include <stdlib.h>
@@ -79,10 +80,13 @@ exit (int code)
   // overloaded by the application, better safe than sorry.
   os_terminate (code);
 
-  // If it does not want o die, loop.
+#if defined(DEBUG)
+  os_arch_brk ();
+#endif /* defined(DEBUG) */
+  // If it does not want to die, loop.
   while (true)
     {
-      ;
+      os_arch_wfi ();
     }
   /* NOTREACHED */
 }
@@ -113,9 +117,12 @@ _Exit (int code)
   // Reset hardware or terminate the semihosting session.
   os_terminate (code);
 
+#if defined(DEBUG)
+  os_arch_brk ();
+#endif /* defined(DEBUG) */
   while (true)
     {
-      ;
+      os_arch_wfi ();
     }
   /* NOTREACHED */
 }
