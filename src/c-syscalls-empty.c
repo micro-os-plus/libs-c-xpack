@@ -295,7 +295,7 @@ _times (struct tms* buf __attribute__((unused)))
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
 
   errno = ENOSYS;
-  return ((clock_t) - 1);
+  return ((clock_t) -1);
 }
 
 int __attribute__((weak))
