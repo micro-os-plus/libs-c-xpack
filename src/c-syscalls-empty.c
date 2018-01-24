@@ -85,8 +85,7 @@ _fstat (int fildes __attribute__((unused)),
 pid_t __attribute__((weak))
 _getpid (void)
 {
-  errno = ENOSYS;
-  return -1;
+  return 1;
 }
 
 int __attribute__((weak))
