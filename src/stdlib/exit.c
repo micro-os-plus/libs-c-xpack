@@ -110,18 +110,6 @@ _Exit (int code)
   // Gracefully terminate the trace session.
   trace_flush ();
 
-#if defined(DEBUG)
-
-#if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
-  if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
-    {
-      // Break only if the debugger is connected.
-      __BKPT(0);
-    }
-#endif /* defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__) */
-
-#endif /* defined(DEBUG) */
-
   // Reset hardware or terminate the semihosting session.
   os_terminate (code);
 
