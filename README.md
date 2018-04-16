@@ -13,12 +13,16 @@ These are some files that complement or extend the C library:
 
 This section is intended to developers who plan to include this library in their own projects.
 
+### Prerequisites
+
+A recent [`xpm`](https://www.npmjs.com/package/xpm), which is a portable [Node.js](https://nodejs.org/) command line application.
+
 ### Easy install
 
-This package can be installed from the `npm` [registry](https://www.npmjs.com/package/@micro-os-plus/c-libs-xpack).
+This package is available as [`@micro-os-plus/c-libs`](https://www.npmjs.com/package/@micro-os-plus/c-libs) from the `npmjs.com` registry; with `xpm` available, installing the latest version of the package is quite easy:
 
 ```console
-$ xpm install @micro-os-plus/c-libs-xpack
+$ xpm install @micro-os-plus/c-libs
 ```
 
 This package is also available from [GitHub](https://github.com/micro-os-plus/c-libs-xpack):
@@ -27,17 +31,7 @@ This package is also available from [GitHub](https://github.com/micro-os-plus/c-
 $ git clone https://github.com/micro-os-plus/c-libs-xpack.git c-libs-xpack.git
 ```
 
-### Prerequisites
-
-Installing from `npm` registry requires a recent [Node.js](https://nodejs.org) (>7.x; the 6.x LTS version is not compatible), and the `xpm` tool (https://www.npmjs.com/package/xpm).
-
-```console
-$ sudo npm install xpm --global
-```
-
-On Windows, global packages are installed in the user home folder, and do not require `sudo`.
-
-Compiling the source code require a modern C++ compiler, preferably GCC 5 or higher, but was also compiled with GCC 4.8. 
+## Maintainer info
 
 ### How to publish
 
