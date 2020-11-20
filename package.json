@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/c-libs",
   "version": "1.0.6",
-  "description": "An xPack with complementary C library functions",
+  "description": "A source xPack with complementary C library functions",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,7 +20,7 @@
   "author": {
     "name": "Liviu Ionescu",
     "email": "ilg@livius.net",
-    "url": "http://liviusdotnet.wordpress.com"
+    "url": "https://github.com/ilg-ul"
   },
   "license": "MIT",
   "bugs": {
