@@ -1,4 +1,8 @@
-## µOS++ complementary C library functions
+[![license](https://img.shields.io/github/license/micro-os-plus/c-libs-xpack)](https://github.com/micro-os-plus/c-libs-xpack/blob/xpack/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/c-libs-xpack.svg)](https://github.com/micro-os-plus/c-libs-xpack/issues)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/c-libs-xpack.svg)](https://github.com/micro-os-plus/c-libs-xpack/pulls)
+
+# µOS++ complementary C library functions
 
 These are some files that complement or extend the C library:
 
@@ -35,11 +39,11 @@ $ git clone https://github.com/micro-os-plus/c-libs-xpack.git c-libs-xpack.git
 
 ### How to publish
 
-* commit all changes
-* update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v0.1.2_
-* `npm version patch`
-* push all changes to GitHub
-* `npm publish`
+- commit all changes
+- update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v0.1.2_
+- `npm version patch`
+- push all changes to GitHub
+- `npm publish`
 
 ## License
 
