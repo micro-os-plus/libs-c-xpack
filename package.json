@@ -1,5 +1,5 @@
 {
-  "name": "@micro-os-plus/c-libs",
+  "name": "@micro-os-plus/libs-c",
   "version": "1.0.6",
   "description": "A source xPack with complementary C library functions",
   "main": "",
@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micro-os-plus/c-libs-xpack.git"
+    "url": "git+https://github.com/micro-os-plus/libs-c-xpack.git"
   },
-  "homepage": "https://github.com/micro-os-plus/c-libs-xpack",
+  "homepage": "https://github.com/micro-os-plus/libs-c-xpack",
   "keywords": [
     "xpack",
     "c++",
@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/micro-os-plus/c-libs-xpack/issues"
+    "url": "https://github.com/micro-os-plus/libs-c-xpack/issues"
   },
   "config": {},
   "dependencies": {},
