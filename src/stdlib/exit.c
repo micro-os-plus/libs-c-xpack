@@ -25,7 +25,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <micro-os-plus/startup/initialize-hooks.h>
+#include <micro-os-plus/startup/hooks.h>
 #include <micro-os-plus/architecture.h>
 #include <micro-os-plus/diag/trace.h>
 
