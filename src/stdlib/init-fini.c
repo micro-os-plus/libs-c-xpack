@@ -29,8 +29,15 @@
 // they must be used as a pair, and the startup code and linker
 // script must be updated.
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wmissing-prototypes"
+// ----------------------------------------------------------------------------
+
+void
+_init (void);
+
+void
+_fini (void);
+
+// ----------------------------------------------------------------------------
 
 void
 __attribute__((weak))
@@ -45,7 +52,5 @@ _fini (void)
 {
   ;
 }
-
-#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
