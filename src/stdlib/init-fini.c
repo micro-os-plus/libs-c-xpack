@@ -31,26 +31,14 @@
 
 // ----------------------------------------------------------------------------
 
-void
-_init (void);
+void _init (void);
 
-void
-_fini (void);
+void _fini (void);
 
 // ----------------------------------------------------------------------------
 
-void
-__attribute__((weak))
-_init (void)
-{
-  ;
-}
+void __attribute__ ((weak)) _init (void) { ; }
 
-void
-__attribute__((weak))
-_fini (void)
-{
-  ;
-}
+void __attribute__ ((weak)) _fini (void) { ; }
 
 // ----------------------------------------------------------------------------
