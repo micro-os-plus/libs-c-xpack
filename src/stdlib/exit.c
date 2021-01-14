@@ -25,17 +25,18 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#include <micro-os-plus/startup/hooks.h>
 #include <micro-os-plus/architecture.h>
 #include <micro-os-plus/diag/trace.h>
-#include <micro-os-plus/startup/hooks.h>
 
-#include "atexit.h"
-#include <stdbool.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include "atexit.h"
 
 // ----------------------------------------------------------------------------
 
-void __attribute__ ((weak, noreturn)) abort (void)
+void __attribute__((weak,noreturn))
+abort (void)
 {
   trace_puts ("abort(), exiting...");
 
@@ -59,7 +60,9 @@ void __attribute__ ((weak, noreturn)) abort (void)
  * When all cleanups are done, `_Exit()` is called to perform
  * the actual termination.
  */
-void __attribute__ ((noreturn)) exit (int code)
+void
+__attribute__ ((noreturn))
+exit (int code)
 {
   trace_printf ("%s(%d)\n", __func__, code);
 
@@ -100,7 +103,8 @@ void __attribute__ ((noreturn)) exit (int code)
 // is required. For example, when semihosting is used, this
 // function sends the return code to the host.
 
-void __attribute__ ((weak, noreturn)) _Exit (int code)
+void __attribute__((weak, noreturn))
+_Exit (int code)
 {
   trace_printf ("%s()\n", __func__);
 
@@ -125,6 +129,7 @@ void __attribute__ ((weak, noreturn)) _Exit (int code)
 
 #pragma GCC diagnostic pop
 
-void __attribute__ ((weak, alias ("_Exit"))) _exit (int status);
+void __attribute__((weak, alias ("_Exit")))
+_exit (int status);
 
 // ----------------------------------------------------------------------------

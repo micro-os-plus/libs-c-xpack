@@ -27,8 +27,8 @@
 
 #include <micro-os-plus/diag/trace.h>
 
-#include <assert.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #include "atexit.h"
 
@@ -109,15 +109,14 @@ exit_func_t __atexit_functions[OS_INTEGER_ATEXIT_ARRAY_SIZE];
  */
 int
 __register_exitproc (int type, exit_func_t fn,
-                     void* arg __attribute__ ((unused)),
-                     void* d __attribute__ ((unused)))
+                     void *arg __attribute__((unused)),
+                     void *d __attribute__((unused)))
 {
-  assert (type == __et_atexit);
-  assert (__atexit_count < OS_INTEGER_ATEXIT_ARRAY_SIZE);
+  assert(type == __et_atexit);
+  assert(__atexit_count < OS_INTEGER_ATEXIT_ARRAY_SIZE);
 
 #if defined(NDEBUG)
-  if ((type != __et_atexit)
-      || (__atexit_count >= OS_INTEGER_ATEXIT_ARRAY_SIZE))
+  if ((type != __et_atexit) || (__atexit_count >= OS_INTEGER_ATEXIT_ARRAY_SIZE))
     {
       return -1;
     }
@@ -133,15 +132,15 @@ __register_exitproc (int type, exit_func_t fn,
 // ----------------------------------------------------------------------------
 
 void
-__call_exitprocs (int code __attribute__ ((unused)),
-                  void* d __attribute__ ((unused)))
+__call_exitprocs (int code __attribute__((unused)),
+                  void* d __attribute__((unused)))
 {
-  trace_printf ("%s()\n", __func__);
+  trace_printf("%s()\n", __func__);
 
   // Call registered functions in reverse order.
   for (size_t i = __atexit_count; i > 0;)
     {
-      __atexit_functions[--i]();
+      __atexit_functions[--i] ();
     }
 }
 

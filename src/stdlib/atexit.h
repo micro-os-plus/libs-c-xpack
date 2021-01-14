@@ -43,13 +43,17 @@ extern "C"
     __et_cxa
   };
 
-  extern void __call_exitprocs (int, void*);
+  extern void
+  __call_exitprocs (int, void*);
 
-  typedef void (*exit_func_t) (void);
+  typedef void
+  (*exit_func_t) (void);
 
-  extern int __register_exitproc (int, exit_func_t fn, void*, void*);
+  extern int
+  __register_exitproc (int, exit_func_t fn, void*, void*);
 
-  extern void os_run_fini_array (void);
+  extern void
+  os_run_fini_array (void);
 
 #if defined(__cplusplus)
 }
