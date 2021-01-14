@@ -28,6 +28,8 @@
 #ifndef LIBC_NEWLIB_C_SYSCALLS_H_
 #define LIBC_NEWLIB_C_SYSCALLS_H_
 
+// ----------------------------------------------------------------------------
+
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/times.h>
@@ -37,11 +39,11 @@ extern "C"
 {
 #endif /* defined(__cplusplus) */
 
-// ----------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
 
-// Declarations for most syscall implementations specific to newlib.
-// Should be included as `#include <newlib/c-syscalls.h>` in all files
-// that implement the retargetted system calls.
+  // Declarations for most syscall implementations specific to newlib.
+  // Should be included as `#include <newlib/c-syscalls.h>` in all files
+  // that implement the retargetted system calls.
 
   int
   _chown (const char* path, uid_t owner, gid_t group);
@@ -106,7 +108,7 @@ extern "C"
   ssize_t
   _write (int fildes, const void* ptr, size_t len);
 
-// ----------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
 
 #if defined(__cplusplus)
 }

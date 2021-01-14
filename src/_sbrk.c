@@ -68,25 +68,23 @@ _sbrk (ptrdiff_t incr)
       // errors, so DO NOT abort here, but return error.
 
       errno = ENOMEM; // Heap has overflowed.
-      return (caddr_t) -1;
+      return (caddr_t)-1;
     }
 
   current_heap_end += incr;
 
-  return (caddr_t) current_block_address;
+  return (caddr_t)current_block_address;
 }
 
 // Guarantee that all standard and reentrant functions get here directly.
 
-void*
-__attribute__((weak, alias ("_sbrk")))
-sbrk (ptrdiff_t incr);
+void* __attribute__ ((weak, alias ("_sbrk"))) sbrk (ptrdiff_t incr);
 
 void*
 _sbrk_r (struct _reent* impure, ptrdiff_t incr);
 
 void*
-_sbrk_r (struct _reent* impure __attribute__((unused)), ptrdiff_t incr)
+_sbrk_r (struct _reent* impure __attribute__ ((unused)), ptrdiff_t incr)
 {
   return _sbrk (incr);
 }

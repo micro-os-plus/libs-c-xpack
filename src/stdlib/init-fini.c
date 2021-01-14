@@ -39,16 +39,12 @@ _fini (void);
 
 // ----------------------------------------------------------------------------
 
-void
-__attribute__((weak))
-_init (void)
+void __attribute__ ((weak)) _init (void)
 {
   ;
 }
 
-void
-__attribute__((weak))
-_fini (void)
+void __attribute__ ((weak)) _fini (void)
 {
   ;
 }

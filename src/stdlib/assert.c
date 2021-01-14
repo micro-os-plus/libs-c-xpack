@@ -38,26 +38,24 @@
 
 void
 __assert_func (const char* file, int line, const char* func,
-	       const char* failedexpr);
+               const char* failedexpr);
 
 #if !defined(TRACE) && !defined(OS_USE_SEMIHOSTING_SYSCALLS)
 
-void
-__attribute__((noreturn))
-__assert_func (const char* file __attribute__((unused)),
-    int line __attribute__((unused)),
-    const char* func __attribute__((unused)),
-    const char* failedexpr __attribute__((unused)))
-  {
-    abort ();
-  }
+void __attribute__ ((noreturn))
+__assert_func (const char* file __attribute__ ((unused)),
+               int line __attribute__ ((unused)),
+               const char* func __attribute__ ((unused)),
+               const char* failedexpr __attribute__ ((unused)))
+{
+  abort ();
+}
 
 #else
 
-void
-__attribute__((noreturn))
+void __attribute__ ((noreturn))
 __assert_func (const char* file, int line, const char* func,
-	       const char* failedexpr)
+               const char* failedexpr)
 {
   // Not atomic, but otherwise the entire string might get too long,
   // and temporary buffer used by trace_printf() will overflow.
