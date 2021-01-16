@@ -79,7 +79,7 @@ void __attribute__ ((noreturn)) exit (int code)
 
 #if defined(DEBUG)
   os_arch_brk ();
-#endif /* defined(DEBUG) */
+#endif // defined(DEBUG)
   // If it does not want to die, loop.
   while (true)
     {
@@ -115,7 +115,7 @@ void __attribute__ ((weak, noreturn)) _Exit (int code)
 
 #if defined(DEBUG)
   os_arch_brk ();
-#endif /* defined(DEBUG) */
+#endif // defined(DEBUG)
   while (true)
     {
       os_arch_wfi ();

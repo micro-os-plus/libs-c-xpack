@@ -37,7 +37,7 @@
 #if defined(__cplusplus)
 extern "C"
 {
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
   // --------------------------------------------------------------------------
 
@@ -112,10 +112,10 @@ extern "C"
 
 #if defined(__cplusplus)
 }
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
 // ----------------------------------------------------------------------------
 
-#endif /* LIBC_NEWLIB_C_SYSCALLS_H_ */
+#endif // LIBC_NEWLIB_C_SYSCALLS_H_
 
 // ----------------------------------------------------------------------------

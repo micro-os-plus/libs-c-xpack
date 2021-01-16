@@ -365,6 +365,6 @@ _write (int fildes __attribute__ ((unused)),
 
 // ----------------------------------------------------------------------------
 
-#endif /* !defined(OS_USE_SEMIHOSTING_SYSCALLS) */
+#endif // !defined(OS_USE_SEMIHOSTING_SYSCALLS)
 
 // ----------------------------------------------------------------------------
