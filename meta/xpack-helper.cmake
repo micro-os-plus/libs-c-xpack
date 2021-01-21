@@ -11,34 +11,40 @@
 
 message(STATUS "Including micro-os-plus-libs-c...")
 
+# -----------------------------------------------------------------------------
+
 function(target_sources_micro_os_plus_libs_c target)
 
-  get_filename_component(PARENT_DIR ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+  get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_sources(
     ${target}
 
     PRIVATE
-      ${PARENT_DIR}/src/stdlib/init-fini.c
-      ${PARENT_DIR}/src/stdlib/assert.c
-      ${PARENT_DIR}/src/stdlib/atexit.cpp
-      ${PARENT_DIR}/src/stdlib/timegm.c
-      ${PARENT_DIR}/src/stdlib/exit.c
-      ${PARENT_DIR}/src/_sbrk.c
-      ${PARENT_DIR}/src/c-syscalls-empty.cpp
-    )
+      ${xpack_root_folder}/src/stdlib/init-fini.c
+      ${xpack_root_folder}/src/stdlib/assert.c
+      ${xpack_root_folder}/src/stdlib/atexit.cpp
+      ${xpack_root_folder}/src/stdlib/timegm.c
+      ${xpack_root_folder}/src/stdlib/exit.c
+      ${xpack_root_folder}/src/_sbrk.c
+      ${xpack_root_folder}/src/c-syscalls-empty.cpp
+  )
+
 endfunction()
+
+# -----------------------------------------------------------------------------
 
 function(target_include_directories_micro_os_plus_libs_c target)
 
-  get_filename_component(PARENT_DIR ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+  get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_include_directories(
     ${target}
 
     PUBLIC
-      ${PARENT_DIR}/include
+      ${xpack_root_folder}/include
   )
+
 endfunction()
 
 # -----------------------------------------------------------------------------
