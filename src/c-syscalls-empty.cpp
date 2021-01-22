@@ -25,6 +25,11 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if (!(defined(__APPLE__) || defined(__linux__) || defined(__unix__))) \
+    || defined(__DOXYGEN__)
+
+// ----------------------------------------------------------------------------
+
 #include <newlib/c-syscalls.h>
 #include <micro-os-plus/architecture.h>
 #include <micro-os-plus/diag/trace.h>
@@ -368,3 +373,8 @@ _write (int fildes __attribute__ ((unused)),
 #endif // !defined(OS_USE_SEMIHOSTING_SYSCALLS)
 
 // ----------------------------------------------------------------------------
+
+#endif // !Unix
+
+// ----------------------------------------------------------------------------
+

@@ -25,6 +25,11 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if (!(defined(__APPLE__) || defined(__linux__) || defined(__unix__))) \
+    || defined(__DOXYGEN__)
+
+// ----------------------------------------------------------------------------
+
 // Empty initialisations. Normally should not be used, but if so,
 // they must be used as a pair, and the startup code and linker
 // script must be updated.
@@ -48,5 +53,9 @@ void __attribute__ ((weak)) _fini (void)
 {
   ;
 }
+
+// ----------------------------------------------------------------------------
+
+#endif // !Unix
 
 // ----------------------------------------------------------------------------

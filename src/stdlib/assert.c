@@ -25,6 +25,11 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if (!(defined(__APPLE__) || defined(__linux__) || defined(__unix__))) \
+    || defined(__DOXYGEN__)
+
+// ----------------------------------------------------------------------------
+
 #include <micro-os-plus/diag/trace.h>
 
 #include <assert.h>
@@ -84,5 +89,9 @@ __assert_func (const char* file, int line, const char* func,
 }
 
 #endif // !defined(TRACE) && !defined(OS_USE_SEMIHOSTING_SYSCALLS)
+
+// ----------------------------------------------------------------------------
+
+#endif // !Unix
 
 // ----------------------------------------------------------------------------

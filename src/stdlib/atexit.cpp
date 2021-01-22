@@ -25,6 +25,10 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if (!(defined(__APPLE__) || defined(__linux__) || defined(__unix__))) \
+    || defined(__DOXYGEN__)
+
+// ----------------------------------------------------------------------------
 #include <micro-os-plus/diag/trace.h>
 
 #include <stdlib.h>
@@ -144,5 +148,9 @@ __call_exitprocs (int code __attribute__ ((unused)),
       __atexit_functions[--i]();
     }
 }
+
+// ----------------------------------------------------------------------------
+
+#endif // !Unix
 
 // ----------------------------------------------------------------------------
