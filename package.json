@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/libs-c",
   "version": "1.0.6",
-  "description": "A source xPack with complementary C library functions",
+  "description": "A source xPack with µOS++ complementary C library functions",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
