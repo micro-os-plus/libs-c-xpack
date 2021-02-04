@@ -2,18 +2,24 @@
 
 Releases in reverse chronological order.
 
-Please check [GitHub](https://github.com/micro-os-plus/libs-c-xpack/issues/) and close existing issues and pull requests.
+Please check
+[GitHub](https://github.com/micro-os-plus/libs-c-xpack/issues/)
+and close existing issues and pull requests.
 
-### v1.0.6 (2018-04-16)
+## v1.1.0 (2021-02-04)
+
+- first restructured release
+
+## v1.0.6 (2018-04-16)
 
 * move deps back to npm
 * update README install
 
-### v1.0.5 (2018-01-25)
+## v1.0.5 (2018-01-25)
 
 * cosmetics
 
-### v1.0.4 (2018-01-24)
+## v1.0.4 (2018-01-24)
 
 * [#1] c-syscalls-empty.c: fix conditional macro
 * [#2] _getpid() always return 1
@@ -24,16 +30,16 @@ Please check [GitHub](https://github.com/micro-os-plus/libs-c-xpack/issues/) and
 * [#6] exit.c: remove ARM specific code
 * [#7] exit.c: add os_arch_*() calls
 
-### v1.0.3 (2018-01-09)
+## v1.0.3 (2018-01-09)
 
 * README updates
 
-### v1.0.2 (2017-10-04)
+## v1.0.2 (2017-10-04)
 
 * package.json clean-ups
 * add CHANGELOG.md
 
-### v1.0.1 (2017-09-04)
+## v1.0.1 (2017-09-04)
 
 * initial version, copied from µOS++.
 
