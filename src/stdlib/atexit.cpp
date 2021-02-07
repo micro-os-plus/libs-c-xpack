@@ -118,6 +118,8 @@ __register_exitproc (int type, exit_func_t fn,
                      void* arg __attribute__ ((unused)),
                      void* d __attribute__ ((unused)))
 {
+  trace_printf ("%s(%d, %p)\n", __func__, type, fn);
+
   assert (type == __et_atexit);
   assert (__atexit_count < OS_INTEGER_ATEXIT_ARRAY_SIZE);
 
