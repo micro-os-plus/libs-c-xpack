@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/libs-c",
-  "version": "1.1.0",
+  "version": "1.1.1-pre",
   "description": "A source xPack with µOS++ complementary C library functions",
   "main": "",
   "scripts": {
