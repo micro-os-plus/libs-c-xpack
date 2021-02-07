@@ -25,6 +25,12 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if (!(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \
+       || defined(__EXCEPTIONS))) \
+    || defined(__DOXYGEN__)
+
+// ----------------------------------------------------------------------------
+
 #define _LITE_EXIT
 
 /*
@@ -36,11 +42,13 @@ extern "C"
 {
 #endif // defined(__cplusplus)
 
+  // --------------------------------------------------------------------------
+
   enum __atexit_types
   {
-    __et_atexit, //
-    __et_onexit, //
-    __et_cxa
+    __et_atexit, // 0
+    __et_onexit, // 1
+    __et_cxa // 2
   };
 
   extern void
@@ -54,8 +62,14 @@ extern "C"
   extern void
   os_run_fini_array (void);
 
+  // --------------------------------------------------------------------------
+
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
+
+// ----------------------------------------------------------------------------
+
+#endif // !Unix
 
 // ----------------------------------------------------------------------------
