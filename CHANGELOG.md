@@ -8,6 +8,9 @@ and close existing issues and pull requests.
 
 ## 2021-02-07
 
+- v1.1.1-pre
+- [#8] - disable atexit.cpp if exceptions are active
+- [#9] - add trace message to __register_exitproc()
 
 ## 2021-02-04
 
