@@ -26,7 +26,7 @@ function(target_sources_micro_os_plus_libs_c target)
   target_sources(
     ${target}
 
-    PUBLIC
+    PUBLIC # PRIVATE
       ${xpack_current_folder}/src/stdlib/init-fini.c
       ${xpack_current_folder}/src/stdlib/assert.c
       ${xpack_current_folder}/src/stdlib/atexit.cpp
