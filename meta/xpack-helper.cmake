@@ -87,7 +87,6 @@ function(add_libraries_micro_os_plus_libs_c)
       micro-os-plus-libs-c-objects
 
       PUBLIC
-        micro-os-plus::common
         micro-os-plus::diag-trace
         micro-os-plus::startup
         micro-os-plus::architecture
@@ -112,7 +111,6 @@ if(true)
       micro-os-plus-libs-c-static
       
       PUBLIC
-        micro-os-plus::common
         micro-os-plus::diag-trace-static
         micro-os-plus::startup-static
         micro-os-plus::architecture
