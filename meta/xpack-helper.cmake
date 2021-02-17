@@ -72,31 +72,6 @@ function(add_libraries_micro_os_plus_libs_c)
   
   # ---------------------------------------------------------------------------
 
-  if(NOT TARGET micro-os-plus-libs-c-objects)
-
-    add_library(micro-os-plus-libs-c-objects OBJECT EXCLUDE_FROM_ALL)
-
-    target_sources_micro_os_plus_libs_c(micro-os-plus-libs-c-objects)
-    target_include_directories_micro_os_plus_libs_c(micro-os-plus-libs-c-objects)
-    target_compile_definitions_micro_os_plus_libs_c(micro-os-plus-libs-c-objects)
-
-    add_library(micro-os-plus::libs-c ALIAS micro-os-plus-libs-c-objects)
-    message(STATUS "micro-os-plus::libs-c")
-
-    target_link_libraries(
-      micro-os-plus-libs-c-objects
-
-      PUBLIC
-        micro-os-plus::diag-trace
-        micro-os-plus::startup
-        micro-os-plus::architecture
-    )
-
-  endif()
-
-  # ---------------------------------------------------------------------------
-
-if(true)
   if(NOT TARGET micro-os-plus-libs-c-static)
 
     add_library(micro-os-plus-libs-c-static STATIC EXCLUDE_FROM_ALL)
@@ -106,6 +81,7 @@ if(true)
     target_compile_definitions_micro_os_plus_libs_c(micro-os-plus-libs-c-static)
 
     add_library(micro-os-plus::libs-c-static ALIAS micro-os-plus-libs-c-static)
+    message(STATUS "micro-os-plus::libs-c-static")
 
     target_link_libraries(
       micro-os-plus-libs-c-static
@@ -117,7 +93,6 @@ if(true)
     )
 
   endif()
-endif()
 
   # ---------------------------------------------------------------------------
 
