@@ -42,17 +42,13 @@ if(NOT TARGET micro-os-plus-libs-c-interface)
 
   # ---------------------------------------------------------------------------
 
+  file(GLOB_RECURSE source_files CONFIGURE_DEPENDS "${xpack_current_folder}/src/*.c*")
+
   target_sources(
     micro-os-plus-libs-c-interface
 
     INTERFACE
-      ${xpack_current_folder}/src/stdlib/init-fini.c
-      ${xpack_current_folder}/src/stdlib/assert.c
-      ${xpack_current_folder}/src/stdlib/atexit.cpp
-      ${xpack_current_folder}/src/stdlib/timegm.c
-      ${xpack_current_folder}/src/stdlib/exit.c
-      ${xpack_current_folder}/src/_sbrk.c
-      ${xpack_current_folder}/src/c-syscalls-empty.cpp
+      ${source_files}
   )
 
   target_include_directories(
