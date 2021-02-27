@@ -36,7 +36,7 @@
 
 #include <errno.h>
 
-using namespace os;
+using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 

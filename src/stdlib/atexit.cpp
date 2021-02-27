@@ -40,6 +40,10 @@
 
 // ----------------------------------------------------------------------------
 
+using namespace micro_os_plus;
+
+// ----------------------------------------------------------------------------
+
 /**
  * @brief Request execution of functions at program exit.
  * @param fn
@@ -132,7 +136,7 @@ __register_exitproc (int type, exit_func_t fn,
 #endif // defined(NDEBUG)
 
   // Use scheduler lock to synchronise access to the array.
-  // os::rtos::scheduler::critical_section scs;
+  // rtos::scheduler::critical_section scs;
 
   __atexit_functions[__atexit_count++] = fn;
   return 0;
