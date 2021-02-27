@@ -94,7 +94,8 @@ _execve (const char* name __attribute__ ((unused)),
 pid_t __attribute__ ((weak)) _fork (void)
 {
 #if defined(DEBUG) \
-    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_FORK_BRK))
+    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
+        || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_FORK_BRK))
   arch::brk ();
 #endif
 
@@ -169,7 +170,8 @@ int __attribute__ ((weak))
 _kill (pid_t pid __attribute__ ((unused)), int sig __attribute__ ((unused)))
 {
 #if defined(DEBUG) \
-    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_KILL_BRK))
+    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
+        || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_KILL_BRK))
   arch::brk ();
 #endif
 
@@ -184,7 +186,8 @@ _link (const char* existing __attribute__ ((unused)),
        const char* _new __attribute__ ((unused)))
 {
 #if defined(DEBUG) \
-    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_LINK_BRK))
+    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
+        || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_LINK_BRK))
   arch::brk ();
 #endif
 
@@ -220,7 +223,8 @@ _open (const char* file __attribute__ ((unused)),
        int flags __attribute__ ((unused)), int mode __attribute__ ((unused)))
 {
 #if defined(DEBUG) \
-    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_OPEN_BRK))
+    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
+        || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_OPEN_BRK))
   arch::brk ();
 #endif
 
@@ -252,7 +256,8 @@ _read (int fildes __attribute__ ((unused)), void* ptr __attribute__ ((unused)),
        size_t len __attribute__ ((unused)))
 {
 #if defined(DEBUG) \
-    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_READ_BRK))
+    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
+        || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_READ_BRK))
   arch::brk ();
 #endif
 
@@ -283,7 +288,8 @@ int __attribute__ ((weak)) _stat (const char* file __attribute__ ((unused)),
                                   struct stat* st __attribute__ ((unused)))
 {
 #if defined(DEBUG) \
-    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_STAT_BRK))
+    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
+        || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_STAT_BRK))
   arch::brk ();
 #endif
 
@@ -341,7 +347,8 @@ int __attribute__ ((weak)) _unlink (const char* name __attribute__ ((unused)))
 pid_t __attribute__ ((weak)) _wait (int* status __attribute__ ((unused)))
 {
 #if defined(DEBUG) \
-    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_WAIT_BRK))
+    && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
+        || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_WAIT_BRK))
   arch::brk ();
 #endif
 
