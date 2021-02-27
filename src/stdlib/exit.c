@@ -82,12 +82,12 @@ void __attribute__ ((noreturn)) exit (int code)
   os_terminate (code);
 
 #if defined(DEBUG)
-  os_arch_brk ();
+  os_architecture_brk ();
 #endif // defined(DEBUG)
   // If it does not want to die, loop.
   while (true)
     {
-      os_arch_wfi ();
+      os_architecture_wfi ();
     }
   /* NOTREACHED */
 }
@@ -118,11 +118,11 @@ void __attribute__ ((weak, noreturn)) _Exit (int code)
   os_terminate (code);
 
 #if defined(DEBUG)
-  os_arch_brk ();
+  os_architecture_brk ();
 #endif // defined(DEBUG)
   while (true)
     {
-      os_arch_wfi ();
+      os_architecture_wfi ();
     }
   /* NOTREACHED */
 }
