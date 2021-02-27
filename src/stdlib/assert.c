@@ -45,7 +45,7 @@ void
 __assert_func (const char* file, int line, const char* func,
                const char* failedexpr);
 
-#if !defined(TRACE) && !defined(OS_USE_SEMIHOSTING_SYSCALLS)
+#if !defined(TRACE) && !defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
 
 void __attribute__ ((noreturn))
 __assert_func (const char* file __attribute__ ((unused)),
@@ -74,7 +74,7 @@ __assert_func (const char* file, int line, const char* func,
       trace_printf ("function: %s\n", func);
     }
 
-#elif defined(OS_USE_SEMIHOSTING_SYSCALLS)
+#elif defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
 
   printf ("assertion \"%s\" failed\n", failedexpr);
   printf ("file: \"%s\"\n", file);
@@ -88,7 +88,7 @@ __assert_func (const char* file, int line, const char* func,
   /* NOTREACHED */
 }
 
-#endif // !defined(TRACE) && !defined(OS_USE_SEMIHOSTING_SYSCALLS)
+#endif // !defined(TRACE) && !defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
 
 // ----------------------------------------------------------------------------
 

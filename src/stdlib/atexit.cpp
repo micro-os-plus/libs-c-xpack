@@ -71,19 +71,19 @@
 int
 atexit (exit_func_t fn)
 {
-#if defined(OS_TRACE_LIBC_ATEXIT)
+#if defined(MICRO_OS_PLUS_TRACE_LIBC_ATEXIT)
   trace_printf ("%s(%p)\n", __func__, fn);
-#endif // defined(OS_TRACE_LIBC_ATEXIT)
+#endif // defined(MICRO_OS_PLUS_TRACE_LIBC_ATEXIT)
 
   return __register_exitproc (__et_atexit, fn, NULL, NULL);
 }
 
 // ----------------------------------------------------------------------------
 
-#if !defined(OS_INTEGER_ATEXIT_ARRAY_SIZE)
+#if !defined(MICRO_OS_PLUS_INTEGER_ATEXIT_ARRAY_SIZE)
 // Due to an odd behaviour, destructors for main and idle are
 // called via atexit().
-#define OS_INTEGER_ATEXIT_ARRAY_SIZE (3)
+#define MICRO_OS_PLUS_INTEGER_ATEXIT_ARRAY_SIZE (3)
 #endif
 
 /**
@@ -98,7 +98,7 @@ size_t __atexit_count;
  * a minimum of 32 functions and to grow the storage dynamically
  * is not met; instead, this static array is used.
  */
-exit_func_t __atexit_functions[OS_INTEGER_ATEXIT_ARRAY_SIZE];
+exit_func_t __atexit_functions[MICRO_OS_PLUS_INTEGER_ATEXIT_ARRAY_SIZE];
 
 /**
  * @brief Simplified version of atexit() registry.
@@ -121,11 +121,11 @@ __register_exitproc (int type, exit_func_t fn,
   trace_printf ("%s(%d, %p)\n", __func__, type, fn);
 
   assert (type == __et_atexit);
-  assert (__atexit_count < OS_INTEGER_ATEXIT_ARRAY_SIZE);
+  assert (__atexit_count < MICRO_OS_PLUS_INTEGER_ATEXIT_ARRAY_SIZE);
 
 #if defined(NDEBUG)
   if ((type != __et_atexit)
-      || (__atexit_count >= OS_INTEGER_ATEXIT_ARRAY_SIZE))
+      || (__atexit_count >= MICRO_OS_PLUS_INTEGER_ATEXIT_ARRAY_SIZE))
     {
       return -1;
     }
