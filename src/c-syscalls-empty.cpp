@@ -51,7 +51,7 @@ int __attribute__ ((weak)) _chown (const char* path __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_CHOWN_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -65,7 +65,7 @@ int __attribute__ ((weak)) _close (int fildes __attribute__ ((unused)))
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_CLOSE_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -82,7 +82,7 @@ _execve (const char* name __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_EXECVE_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -96,7 +96,7 @@ pid_t __attribute__ ((weak)) _fork (void)
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_FORK_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -118,7 +118,7 @@ int __attribute__ ((weak)) _fstat (int fildes __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_FSTAT_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -139,7 +139,7 @@ _gettimeofday (struct timeval* ptimeval __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_GETTIMEOFDAY_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -158,7 +158,7 @@ int __attribute__ ((weak)) _isatty (int fildes __attribute__ ((unused)))
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_ISATTY_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() false\n", __FUNCTION__);
@@ -172,7 +172,7 @@ _kill (pid_t pid __attribute__ ((unused)), int sig __attribute__ ((unused)))
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_KILL_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -188,7 +188,7 @@ _link (const char* existing __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_LINK_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -209,7 +209,7 @@ _lseek (int fildes __attribute__ ((unused)), int ptr __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_LSEEK_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -225,7 +225,7 @@ _open (const char* file __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_OPEN_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -242,7 +242,7 @@ _openat (int dirfd __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_OPENAT_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -258,7 +258,7 @@ _read (int fildes __attribute__ ((unused)), void* ptr __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_READ_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -275,7 +275,7 @@ _readlink (const char* path __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_READLINK_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -290,7 +290,7 @@ int __attribute__ ((weak)) _stat (const char* file __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_STAT_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -306,7 +306,7 @@ _symlink (const char* existing __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_SYMLINK_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -321,7 +321,7 @@ _times (struct tms* buf __attribute__ ((unused)))
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_TIMES_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -335,7 +335,7 @@ int __attribute__ ((weak)) _unlink (const char* name __attribute__ ((unused)))
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_UNLINK_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -349,7 +349,7 @@ pid_t __attribute__ ((weak)) _wait (int* status __attribute__ ((unused)))
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_WAIT_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
@@ -366,7 +366,7 @@ _write (int fildes __attribute__ ((unused)),
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_WRITE_BRK))
-  arch::brk ();
+  architecture::brk ();
 #endif
 
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
