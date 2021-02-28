@@ -60,7 +60,7 @@ extern "C"
   __register_exitproc (int, exit_func_t fn, void*, void*);
 
   extern void
-  os_run_fini_array (void);
+  micro_os_plus_run_fini_array (void);
 
   // --------------------------------------------------------------------------
 

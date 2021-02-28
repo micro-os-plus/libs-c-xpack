@@ -71,7 +71,7 @@ void __attribute__ ((noreturn)) exit (int code)
   __call_exitprocs (code, NULL);
 
   // Run the C++ static destructors.
-  os_run_fini_array ();
+  micro_os_plus_run_fini_array ();
 
   // This should normally be the end of it.
   _Exit (code);
@@ -79,15 +79,15 @@ void __attribute__ ((noreturn)) exit (int code)
   // Reset again, in case _Exit() did not kill it.
   // This normally should not happen, but since it can be
   // overloaded by the application, better safe than sorry.
-  os_terminate (code);
+  micro_os_plus_terminate (code);
 
 #if defined(DEBUG)
-  os_architecture_brk ();
+  micro_os_plus_architecture_brk ();
 #endif // defined(DEBUG)
   // If it does not want to die, loop.
   while (true)
     {
-      os_architecture_wfi ();
+      micro_os_plus_architecture_wfi ();
     }
   /* NOTREACHED */
 }
@@ -109,20 +109,20 @@ void __attribute__ ((weak, noreturn)) _Exit (int code)
   trace_printf ("%s()\n", __func__);
 
   // Print some statistics about memory use.
-  os_terminate_goodbye ();
+  micro_os_plus_terminate_goodbye ();
 
   // Gracefully terminate the trace session.
   trace_flush ();
 
   // Reset hardware or terminate the semihosting session.
-  os_terminate (code);
+  micro_os_plus_terminate (code);
 
 #if defined(DEBUG)
-  os_architecture_brk ();
+  micro_os_plus_architecture_brk ();
 #endif // defined(DEBUG)
   while (true)
     {
-      os_architecture_wfi ();
+      micro_os_plus_architecture_wfi ();
     }
   /* NOTREACHED */
 }
