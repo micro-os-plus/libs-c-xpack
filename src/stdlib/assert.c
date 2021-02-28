@@ -42,7 +42,7 @@
 // ----------------------------------------------------------------------------
 
 void
-__assert_func (const char* file, int line, const char* func,
+__assert_func (const char* file, int line, const char* function,
                const char* failedexpr);
 
 #if !defined(TRACE) && !defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
@@ -50,7 +50,7 @@ __assert_func (const char* file, int line, const char* func,
 void __attribute__ ((noreturn))
 __assert_func (const char* file __attribute__ ((unused)),
                int line __attribute__ ((unused)),
-               const char* func __attribute__ ((unused)),
+               const char* function __attribute__ ((unused)),
                const char* failedexpr __attribute__ ((unused)))
 {
   abort ();
@@ -59,7 +59,7 @@ __assert_func (const char* file __attribute__ ((unused)),
 #else
 
 void __attribute__ ((noreturn))
-__assert_func (const char* file, int line, const char* func,
+__assert_func (const char* file, int line, const char* function,
                const char* failedexpr)
 {
   // Not atomic, but otherwise the entire string might get too long,
@@ -69,9 +69,9 @@ __assert_func (const char* file, int line, const char* func,
   trace_printf ("assertion \"%s\" failed\n", failedexpr);
   trace_printf ("file: \"%s\"\n", file);
   trace_printf ("line: %d\n", line);
-  if (func != NULL)
+  if (function != NULL)
     {
-      trace_printf ("function: %s\n", func);
+      trace_printf ("function: %s\n", function);
     }
 
 #elif defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
@@ -79,9 +79,9 @@ __assert_func (const char* file, int line, const char* func,
   printf ("assertion \"%s\" failed\n", failedexpr);
   printf ("file: \"%s\"\n", file);
   printf ("line: %d\n", line);
-  if (func != NULL)
+  if (function != NULL)
     {
-      printf ("function: %s\n", func);
+      printf ("function: %s\n", function);
     }
 #endif
   abort ();
