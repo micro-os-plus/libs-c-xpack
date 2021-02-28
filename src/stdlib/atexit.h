@@ -54,10 +54,10 @@ extern "C"
   extern void
   __call_exitprocs (int, void*);
 
-  typedef void (*exit_func_t) (void);
+  typedef void (*exit_function_t) (void);
 
   extern int
-  __register_exitproc (int, exit_func_t fn, void*, void*);
+  __register_exitproc (int, exit_function_t fn, void*, void*);
 
   extern void
   micro_os_plus_run_fini_array (void);

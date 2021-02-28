@@ -73,7 +73,7 @@ using namespace micro_os_plus;
  * size of this array to match its needs.
  */
 int
-atexit (exit_func_t fn)
+atexit (exit_function_t fn)
 {
 #if defined(MICRO_OS_PLUS_TRACE_LIBC_ATEXIT)
   trace_printf ("%s(%p)\n", __func__, fn);
@@ -102,7 +102,7 @@ size_t __atexit_count;
  * a minimum of 32 functions and to grow the storage dynamically
  * is not met; instead, this static array is used.
  */
-exit_func_t __atexit_functions[MICRO_OS_PLUS_INTEGER_ATEXIT_ARRAY_SIZE];
+exit_function_t __atexit_functions[MICRO_OS_PLUS_INTEGER_ATEXIT_ARRAY_SIZE];
 
 /**
  * @brief Simplified version of atexit() registry.
@@ -118,7 +118,7 @@ exit_func_t __atexit_functions[MICRO_OS_PLUS_INTEGER_ATEXIT_ARRAY_SIZE];
  * more general cxa or dso handles are currently not supported.
  */
 int
-__register_exitproc (int type, exit_func_t fn,
+__register_exitproc (int type, exit_function_t fn,
                      void* arg __attribute__ ((unused)),
                      void* d __attribute__ ((unused)))
 {
