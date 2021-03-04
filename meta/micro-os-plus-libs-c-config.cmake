@@ -72,7 +72,7 @@ if(NOT TARGET micro-os-plus-libs-c-interface)
   # Aliases.
 
   add_library(micro-os-plus::libs-c ALIAS micro-os-plus-libs-c-interface)
-  message(STATUS "micro-os-plus::libs-c")
+  message(STATUS "=> micro-os-plus::libs-c")
 
 endif()
 
