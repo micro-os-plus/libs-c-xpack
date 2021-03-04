@@ -46,12 +46,12 @@ _sbrk (ptrdiff_t incr);
 // The definitions used here should be kept in sync with the
 // stack definitions in the linker script.
 
+extern char __heap_begin__; // Defined by the linker.
+extern char __heap_end__; // Defined by the linker.
+
 void*
 _sbrk (ptrdiff_t incr)
 {
-  extern char __heap_begin__; // Defined by the linker.
-  extern char __heap_end__; // Defined by the linker.
-
   static char* current_heap_end; // STATIC! Zero after BSS init.
   char* current_block_address;
 

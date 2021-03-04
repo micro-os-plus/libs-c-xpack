@@ -95,7 +95,11 @@ void __attribute__ ((noreturn)) exit (int code)
 // ----------------------------------------------------------------------------
 
 #pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunused-parameter"
+//#pragma GCC diagnostic ignored "-Wunused-parameter"
+// arm-none-eabi/include/stdlib.h:202:6: note: '_exit' target declared here
+//  202 | void _Exit (int __status) _ATTRIBUTE ((__noreturn__));
+#pragma GCC diagnostic ignored "-Wmissing-attributes"
+
 
 // On Release, call the hardware reset procedure.
 // On Debug, use a breakpoint to notify the debugger.
@@ -127,9 +131,10 @@ void __attribute__ ((weak, noreturn)) _Exit (int code)
   /* NOTREACHED */
 }
 
-#pragma GCC diagnostic pop
 
-void __attribute__ ((weak, alias ("_Exit"))) _exit (int status);
+void __attribute__ ((weak, noreturn, alias ("_Exit"))) _exit (int status);
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
 

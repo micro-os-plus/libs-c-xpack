@@ -41,10 +41,6 @@
 
 // ----------------------------------------------------------------------------
 
-void
-__assert_func (const char* file, int line, const char* function,
-               const char* failedexpr);
-
 #if !defined(TRACE) && !defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
 
 void __attribute__ ((noreturn))

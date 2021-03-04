@@ -122,6 +122,10 @@ timegm (struct tm* tim_p)
   return tim;
 }
 
+#pragma GCC diagnostic push
+// res = div (tim_p->tm_sec, 60);
+#pragma GCC diagnostic ignored "-Waggregate-return"
+
 /*
  * This is an unfortunate code duplication, but the newlib functions
  * are also static and cannot be used here.
@@ -209,6 +213,8 @@ validate_structure (struct tm* tim_p)
         }
     }
 }
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
 
