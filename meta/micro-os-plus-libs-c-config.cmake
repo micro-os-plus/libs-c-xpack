@@ -63,8 +63,8 @@ if(NOT TARGET micro-os-plus-libs-c-interface)
     micro-os-plus-libs-c-interface
     
     INTERFACE
-      micro-os-plus::diag-trace-static
-      micro-os-plus::startup-static
+      micro-os-plus::diag-trace
+      micro-os-plus::startup
       micro-os-plus::architecture
   )
 
