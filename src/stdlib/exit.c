@@ -100,7 +100,6 @@ void __attribute__ ((noreturn)) exit (int code)
 //  202 | void _Exit (int __status) _ATTRIBUTE ((__noreturn__));
 #pragma GCC diagnostic ignored "-Wmissing-attributes"
 
-
 // On Release, call the hardware reset procedure.
 // On Debug, use a breakpoint to notify the debugger.
 //
@@ -130,7 +129,6 @@ void __attribute__ ((weak, noreturn)) _Exit (int code)
     }
   /* NOTREACHED */
 }
-
 
 void __attribute__ ((weak, noreturn, alias ("_Exit"))) _exit (int status);
 
