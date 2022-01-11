@@ -109,7 +109,7 @@ void __attribute__ ((noreturn)) exit (int code)
 
 void __attribute__ ((weak, noreturn)) _Exit (int code)
 {
-  trace_printf ("%s()\n", __func__);
+  trace_printf ("%s(%d)\n", __func__, code);
 
   // Print some statistics about memory use.
   micro_os_plus_terminate_goodbye ();
