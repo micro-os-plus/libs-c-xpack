@@ -15,9 +15,6 @@
 # The result is a library that can be added to the linker with:
 #
 # `target_link_libraries(your-target PUBLIC micro-os-plus::libs-c)`
-#
-# To avoid poluting this file with test related details, there is a separate
-# CMake configuration in the `tests` folder.
 
 # -----------------------------------------------------------------------------
 ## Preamble ##
@@ -30,36 +27,68 @@ project(
   DESCRIPTION "µOS++ complementary C library functions"
 )
 
-# Must be called from the project root folder.
-enable_testing()
+# PRIVATE: build definitions, used internally
+# INTERFACE: usage definitions, passed up to targets linking to it
+# PUBLIC: both
 
-# -----------------------------------------------------------------------------
-## Project wide setup ##
-
-enable_language(C)
-enable_language(CXX)
-enable_language(ASM)
-
-# Specify the C/C++ standards.
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# -----------------------------------------------------------------------------
-
-if ("${CMAKE_CURRENT_LIST_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-
-  # Tests, only when not part of a parent application
-  add_subdirectory("tests")
-
-else()
-
-  # Main targets built by this project.
-  add_subdirectory("sources")
-
+if(COMMAND xpack_get_package_name_and_version)
+  xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
+  message(VERBOSE "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}...")
 endif()
+
+# -----------------------------------------------------------------------------
+## The project library definitions ##
+
+# Since this library provides non-weak symbols to customise
+# the newlib behaviour, it cannot be static, and the --whole-archive
+# trick has other disadvantages.
+add_library(micro-os-plus-libs-c-interface INTERFACE EXCLUDE_FROM_ALL)
+
+# -----------------------------------------------------------------------------
+
+target_sources(
+  micro-os-plus-libs-c-interface
+
+  INTERFACE
+    "src/stdlib/assert.c"
+    "src/stdlib/atexit.cpp"
+    "src/stdlib/exit.c"
+    "src/stdlib/init-fini.c"
+    "src/stdlib/timegm.c"
+    "src/_sbrk.c"
+    "src/c-syscalls-empty.cpp"
+)
+
+message(VERBOSE "+ src/stdlib/assert.c")
+message(VERBOSE "+ src/stdlib/atexit.cpp")
+message(VERBOSE "+ src/stdlib/exit.c")
+message(VERBOSE "+ src/stdlib/init-fini.c")
+message(VERBOSE "+ src/stdlib/timegm.c")
+message(VERBOSE "+ src/_sbrk.c")
+message(VERBOSE "+ src/c-syscalls-empty.cpp")
+
+target_include_directories(
+  micro-os-plus-libs-c-interface
+
+  INTERFACE
+    "include"
+)
+
+message(VERBOSE "+ include")
+
+target_link_libraries(
+  micro-os-plus-libs-c-interface
+
+  INTERFACE
+    micro-os-plus::diag-trace
+    micro-os-plus::startup
+    micro-os-plus::architecture
+)
+
+# -----------------------------------------------------------------------------
+# Aliases.
+
+add_library(micro-os-plus::libs-c ALIAS micro-os-plus-libs-c-interface)
+message(VERBOSE "> micro-os-plus::libs-c -> micro-os-plus-libs-c-interface")
 
 # -----------------------------------------------------------------------------
