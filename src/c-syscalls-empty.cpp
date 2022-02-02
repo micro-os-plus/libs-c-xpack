@@ -133,7 +133,7 @@ pid_t __attribute__ ((weak)) _getpid (void)
 }
 
 int __attribute__ ((weak))
-_gettimeofday (struct timeval* ptimeval __attribute__ ((unused)),
+_gettimeofday (timeval* ptimeval __attribute__ ((unused)),
                void* ptimezone __attribute__ ((unused)))
 {
 #if defined(DEBUG) \
@@ -316,7 +316,7 @@ _symlink (const char* existing __attribute__ ((unused)),
 }
 
 clock_t __attribute__ ((weak))
-_times (struct tms* buf __attribute__ ((unused)))
+_times (tms* buf __attribute__ ((unused)))
 {
 #if defined(DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
@@ -327,7 +327,7 @@ _times (struct tms* buf __attribute__ ((unused)))
   trace::printf ("%s() ENOSYS\n", __FUNCTION__);
 
   errno = ENOSYS;
-  return ((clock_t)-1);
+  return static_cast<clock_t> (-1);
 }
 
 int __attribute__ ((weak)) _unlink (const char* name __attribute__ ((unused)))
