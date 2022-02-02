@@ -27,10 +27,6 @@ project(
   DESCRIPTION "µOS++ complementary C library functions"
 )
 
-# PRIVATE: build definitions, used internally
-# INTERFACE: usage definitions, passed up to targets linking to it
-# PUBLIC: both
-
 if(COMMAND xpack_get_package_name_and_version)
   xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
   message(VERBOSE "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}...")
@@ -39,12 +35,18 @@ endif()
 # -----------------------------------------------------------------------------
 ## The project library definitions ##
 
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
+# PRIVATE: build definitions, used internally
+# INTERFACE: usage definitions, passed up to targets linking to it
+# PUBLIC: both
+
 # Since this library provides non-weak symbols to customise
 # the newlib behaviour, it cannot be static, and the --whole-archive
 # trick has other disadvantages.
 add_library(micro-os-plus-libs-c-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
+# Target settings.
 
 target_sources(
   micro-os-plus-libs-c-interface
