@@ -6,13 +6,16 @@
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/MIT/.
+#
 # -----------------------------------------------------------------------------
 
 # This file is intended to be consumed by applications with:
 #
 # `add_subdirectory("xpacks/micro-os-plus-libs-c")`
 #
-# The result is a library that can be added to the linker with:
+# The result is an interface library that can be added to the linker with:
 #
 # `target_link_libraries(your-target PUBLIC micro-os-plus::libs-c)`
 
@@ -48,6 +51,15 @@ add_library(micro-os-plus-libs-c-interface INTERFACE EXCLUDE_FROM_ALL)
 # -----------------------------------------------------------------------------
 # Target settings.
 
+target_include_directories(
+  micro-os-plus-libs-c-interface
+
+  INTERFACE
+    "include"
+)
+
+message(VERBOSE "+ -I include")
+
 target_sources(
   micro-os-plus-libs-c-interface
 
@@ -69,19 +81,18 @@ message(VERBOSE "+ src/stdlib/timegm.c")
 message(VERBOSE "+ src/_sbrk.c")
 message(VERBOSE "+ src/c-syscalls-empty.cpp")
 
-target_include_directories(
+target_compile_definitions(
   micro-os-plus-libs-c-interface
 
   INTERFACE
-    "include"
+    # ... add preprocessor macro definitions.
 )
-
-message(VERBOSE "+ include")
 
 target_link_libraries(
   micro-os-plus-libs-c-interface
 
   INTERFACE
+    # Dependencies
     micro-os-plus::diag-trace
     micro-os-plus::startup
     micro-os-plus::architecture
@@ -90,6 +101,7 @@ target_link_libraries(
 # -----------------------------------------------------------------------------
 # Aliases.
 
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library(micro-os-plus::libs-c ALIAS micro-os-plus-libs-c-interface)
 message(VERBOSE "> micro-os-plus::libs-c -> micro-os-plus-libs-c-interface")
 
