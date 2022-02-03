@@ -31,8 +31,8 @@ _sbrk (ptrdiff_t incr);
 // The definitions used here should be kept in sync with the
 // stack definitions in the linker script.
 
-extern char __heap_begin__; // Defined by the linker.
-extern char __heap_end__; // Defined by the linker.
+extern uint32_t __heap_begin__; // Defined by the linker.
+extern uint32_t __heap_end__; // Defined by the linker.
 
 void*
 _sbrk (ptrdiff_t incr)
@@ -42,7 +42,7 @@ _sbrk (ptrdiff_t incr)
 
   if (current_heap_end == 0)
     {
-      current_heap_end = &__heap_begin__;
+      current_heap_end = (char*)&__heap_begin__;
     }
 
   current_block_address = current_heap_end;
@@ -52,7 +52,7 @@ _sbrk (ptrdiff_t incr)
   // So we assume that the heap starts on word boundary,
   // hence make sure we always add a multiple of 4 to it.
   incr = (incr + 3) & (~3); // align value to 4
-  if (current_heap_end + incr > &__heap_end__)
+  if (current_heap_end + incr > (char*)&__heap_end__)
     {
       // Some of the libstdc++-v3 tests rely upon detecting 'out of memory'
       // errors, so DO NOT abort here, but return error.
