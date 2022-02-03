@@ -26,7 +26,6 @@
 
 message('Processing xPack @micro-os-plus/libs-c...')
 
-# Public definitions, also passed up to targets linking to them.
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 micro_os_plus_libs_c_dependency = declare_dependency(
   include_directories: include_directories(
