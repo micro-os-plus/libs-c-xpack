@@ -6,6 +6,20 @@ Please check
 [GitHub](https://github.com/micro-os-plus/libs-c-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-04
+
+- 55c3eff cmake: add xpack_display_target_lists
+- 4f6d2c1 _sbrk: fix warnings
+
+## 2022-02-02
+
+- d989d8c add meson support
+- 813642d c-syscalls-empty.cpp fix casts
+
+## 2022-01-28
+
+- 1caf860 rework CMake, top config, no sources
+
 ## 2022-01-26
 
 - v2.1.0
