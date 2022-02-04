@@ -8,6 +8,7 @@ and close existing issues and pull requests.
 
 ## 2022-02-04
 
+- v2.2.0
 - 55c3eff cmake: add xpack_display_target_lists
 - 4f6d2c1 _sbrk: fix warnings
 
