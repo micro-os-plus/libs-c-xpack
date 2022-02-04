@@ -58,8 +58,6 @@ target_include_directories(
     "include"
 )
 
-message(VERBOSE "+ -I include")
-
 target_sources(
   micro-os-plus-libs-c-interface
 
@@ -72,14 +70,6 @@ target_sources(
     "src/_sbrk.c"
     "src/c-syscalls-empty.cpp"
 )
-
-message(VERBOSE "+ src/stdlib/assert.c")
-message(VERBOSE "+ src/stdlib/atexit.cpp")
-message(VERBOSE "+ src/stdlib/exit.c")
-message(VERBOSE "+ src/stdlib/init-fini.c")
-message(VERBOSE "+ src/stdlib/timegm.c")
-message(VERBOSE "+ src/_sbrk.c")
-message(VERBOSE "+ src/c-syscalls-empty.cpp")
 
 target_compile_definitions(
   micro-os-plus-libs-c-interface
@@ -97,6 +87,10 @@ target_link_libraries(
     micro-os-plus::startup
     micro-os-plus::architecture
 )
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(micro-os-plus-libs-c-interface)
+endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
