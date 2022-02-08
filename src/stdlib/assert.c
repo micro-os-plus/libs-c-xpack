@@ -26,7 +26,7 @@
 
 // ----------------------------------------------------------------------------
 
-#if !defined(TRACE) && !defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
+#if !defined(MICRO_OS_PLUS_TRACE) && !defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
 
 void __attribute__ ((noreturn))
 __assert_func (const char* file __attribute__ ((unused)),
@@ -45,7 +45,7 @@ __assert_func (const char* file, int line, const char* function,
 {
   // Not atomic, but otherwise the entire string might get too long,
   // and temporary buffer used by trace_printf() will overflow.
-#if defined(TRACE)
+#if defined(MICRO_OS_PLUS_TRACE)
 
   trace_printf ("assertion \"%s\" failed\n", failedexpr);
   trace_printf ("file: \"%s\"\n", file);
@@ -69,7 +69,7 @@ __assert_func (const char* file, int line, const char* function,
   /* NOTREACHED */
 }
 
-#endif // !defined(TRACE) && !defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
+#endif // !defined(MICRO_OS_PLUS_TRACE) && !defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
 
 // ----------------------------------------------------------------------------
 
