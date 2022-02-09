@@ -66,9 +66,9 @@ void __attribute__ ((noreturn)) exit (int code)
   // overloaded by the application, better safe than sorry.
   micro_os_plus_terminate (code);
 
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
   micro_os_plus_architecture_brk ();
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
   // If it does not want to die, loop.
   while (true)
     {
@@ -105,9 +105,9 @@ void __attribute__ ((weak, noreturn)) _Exit (int code)
   // Reset hardware or terminate the semihosting session.
   micro_os_plus_terminate (code);
 
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
   micro_os_plus_architecture_brk ();
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
   while (true)
     {
       micro_os_plus_architecture_wfi ();

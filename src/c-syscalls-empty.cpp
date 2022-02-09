@@ -33,7 +33,7 @@ int __attribute__ ((weak)) _chown (const char* path __attribute__ ((unused)),
                                    uid_t owner __attribute__ ((unused)),
                                    gid_t group __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_CHOWN_BRK))
   architecture::brk ();
@@ -47,7 +47,7 @@ int __attribute__ ((weak)) _chown (const char* path __attribute__ ((unused)),
 
 int __attribute__ ((weak)) _close (int fildes __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_CLOSE_BRK))
   architecture::brk ();
@@ -64,7 +64,7 @@ _execve (const char* name __attribute__ ((unused)),
          char* const argv[] __attribute__ ((unused)),
          char* const envp[] __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_EXECVE_BRK))
   architecture::brk ();
@@ -78,7 +78,7 @@ _execve (const char* name __attribute__ ((unused)),
 
 pid_t __attribute__ ((weak)) _fork (void)
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_FORK_BRK))
   architecture::brk ();
@@ -100,7 +100,7 @@ int __attribute__ ((weak)) _fstat (int fildes __attribute__ ((unused)),
       return 0;
     }
 
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_FSTAT_BRK))
   architecture::brk ();
@@ -121,7 +121,7 @@ int __attribute__ ((weak))
 _gettimeofday (timeval* ptimeval __attribute__ ((unused)),
                void* ptimezone __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_GETTIMEOFDAY_BRK))
   architecture::brk ();
@@ -140,7 +140,7 @@ int __attribute__ ((weak)) _isatty (int fildes __attribute__ ((unused)))
       return 1;
     }
 
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_ISATTY_BRK))
   architecture::brk ();
@@ -154,7 +154,7 @@ int __attribute__ ((weak)) _isatty (int fildes __attribute__ ((unused)))
 int __attribute__ ((weak))
 _kill (pid_t pid __attribute__ ((unused)), int sig __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_KILL_BRK))
   architecture::brk ();
@@ -170,7 +170,7 @@ int __attribute__ ((weak))
 _link (const char* existing __attribute__ ((unused)),
        const char* _new __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_LINK_BRK))
   architecture::brk ();
@@ -191,7 +191,7 @@ _lseek (int fildes __attribute__ ((unused)), int ptr __attribute__ ((unused)),
       return 0;
     }
 
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_LSEEK_BRK))
   architecture::brk ();
@@ -207,7 +207,7 @@ int __attribute__ ((weak))
 _open (const char* file __attribute__ ((unused)),
        int flags __attribute__ ((unused)), int mode __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_OPEN_BRK))
   architecture::brk ();
@@ -224,7 +224,7 @@ _openat (int dirfd __attribute__ ((unused)),
          const char* name __attribute__ ((unused)),
          int flags __attribute__ ((unused)), int mode __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_OPENAT_BRK))
   architecture::brk ();
@@ -240,7 +240,7 @@ ssize_t __attribute__ ((weak))
 _read (int fildes __attribute__ ((unused)), void* ptr __attribute__ ((unused)),
        size_t len __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_READ_BRK))
   architecture::brk ();
@@ -257,7 +257,7 @@ _readlink (const char* path __attribute__ ((unused)),
            void* buf __attribute__ ((unused)),
            size_t bufsize __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_READLINK_BRK))
   architecture::brk ();
@@ -272,7 +272,7 @@ _readlink (const char* path __attribute__ ((unused)),
 int __attribute__ ((weak)) _stat (const char* file __attribute__ ((unused)),
                                   struct stat* st __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_STAT_BRK))
   architecture::brk ();
@@ -288,7 +288,7 @@ int __attribute__ ((weak))
 _symlink (const char* existing __attribute__ ((unused)),
           const char* _new __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_SYMLINK_BRK))
   architecture::brk ();
@@ -303,7 +303,7 @@ _symlink (const char* existing __attribute__ ((unused)),
 clock_t __attribute__ ((weak))
 _times (tms* buf __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_TIMES_BRK))
   architecture::brk ();
@@ -317,7 +317,7 @@ _times (tms* buf __attribute__ ((unused)))
 
 int __attribute__ ((weak)) _unlink (const char* name __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_UNLINK_BRK))
   architecture::brk ();
@@ -331,7 +331,7 @@ int __attribute__ ((weak)) _unlink (const char* name __attribute__ ((unused)))
 
 pid_t __attribute__ ((weak)) _wait (int* status __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_WAIT_BRK))
   architecture::brk ();
@@ -348,7 +348,7 @@ _write (int fildes __attribute__ ((unused)),
         const void* ptr __attribute__ ((unused)),
         size_t len __attribute__ ((unused)))
 {
-#if defined(DEBUG) \
+#if defined(MICRO_OS_PLUS_DEBUG) \
     && (defined(MICRO_OS_PLUS_DEBUG_SYSCALLS_BRK) \
         || defined(MICRO_OS_PLUS_DEBUG_SYSCALL_WRITE_BRK))
   architecture::brk ();
