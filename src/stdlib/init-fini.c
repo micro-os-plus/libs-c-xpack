@@ -15,6 +15,12 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)
+#include <micro-os-plus/config.h>
+#endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
+
+// ----------------------------------------------------------------------------
+
 // Empty initialisations. Normally should not be used, but if so,
 // they must be used as a pair, and the startup code and linker
 // script must be updated.
