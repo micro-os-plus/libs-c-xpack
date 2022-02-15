@@ -6,6 +6,19 @@ Please check
 [GitHub](https://github.com/micro-os-plus/libs-c-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-15
+
+- v3.0.0
+
+## 2022-02-10
+
+- c820401 .c* include <micro-os-plus/config.h>
+
+## 2022-02-09
+
+- cd87109 rename MICRO_OS_PLUS_DEBUG
+- d2a8414 rename MICRO_OS_PLUS_TRACE
+
 ## 2022-02-05
 
 - v2.2.1
