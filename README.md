@@ -1,7 +1,7 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/libs-c-xpack)](https://github.com/micro-os-plus/libs-c-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/libs-c-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/libs-c-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 
-# A source xPack with µOS++ complementary C library functions
+# A source library xPack with µOS++ complementary C library functions
 
 These are some files that complement or extend the C library:
 
@@ -25,8 +25,8 @@ For maintainer infos, please see the
 
 ## Install
 
-As a source xPacks, the easiest way to add it to a project is via **xpm**,
-but it can also be used as any Git project, for example as a submodule.
+As a source library xPacks, the easiest way to add it to a project is via
+**xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
 
