@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/libs-c",
   "version": "3.0.0",
-  "description": "A source xPack with µOS++ complementary C library functions",
+  "description": "A source library xPack with µOS++ complementary C library functions",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
