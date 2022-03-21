@@ -58,6 +58,8 @@ cd my-project
 xpm init # Unless a package.json is already present
 
 xpm install @micro-os-plus/libs-c@latest
+
+ls -l xpacks/micro-os-plus-libs-c
 ```
 
 ### Git submodule
