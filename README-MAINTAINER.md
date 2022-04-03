@@ -117,7 +117,7 @@ When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @micro-os-plus/libs-c`
 - `npm dist-tag add @micro-os-plus/libs-c@3.0.0 latest`
-- `npm dist-tag ls @@micro-os-plus/libs-c`
+- `npm dist-tag ls @micro-os-plus/libs-c`
 
 ## Announce to the community
 
