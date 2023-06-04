@@ -68,7 +68,7 @@ xpm init # Unless a package.json is already present
 
 xpm install @micro-os-plus/libs-c@latest
 
-ls -l xpacks/micro-os-plus-libs-c
+ls -l xpacks/@micro-os-plus/libs-c
 ```
 
 ### Git submodule
@@ -82,7 +82,7 @@ git init # Unless already a Git project
 mkdir -p xpacks
 
 git submodule add https://github.com/micro-os-plus/libs-c-xpack.git \
-  xpacks/micro-os-plus-libs-c
+  xpacks/@micro-os-plus/libs-c
 ```
 
 ## Branches
